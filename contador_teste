@@ -1,0 +1,25 @@
+from time import sleep
+
+
+def contador(i, f, p=1):
+    print('-=' * 20)
+    if p == 0:
+        p = 1
+    if f < i and p > 0:
+        p *= -1
+    if f > i and p < 0:
+        p *= -1
+    if f > 0:
+        f += 1
+    elif f < 0:
+        f -= 1
+    for co in range(i, f, p):
+        print(co, end=' ')
+        sleep(.3)
+    print()
+
+
+a = int(input('Digite o inicio da contagem: '))
+b = int(input('Digite o fim da contagem: '))
+c = int(input('Digite o passo da contagem: '))
+contador(a, b, c)
